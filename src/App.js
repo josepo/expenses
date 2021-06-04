@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Item from './components/Item';
 
 function App() {
   return (
@@ -8,7 +9,9 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Expenses Manager <br />
-          <small>A ReactJS app</small>
+          <Item />
+          <Item />
+          <Item />
         </p>
       </header>
     </div>
