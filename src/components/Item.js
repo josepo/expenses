@@ -1,12 +1,12 @@
 import './Item.css';
 
-function Item()
+function Item({ date, title, amount })
 {
    return (
       <div className='item'>
-         <div className='item__date'>Date</div>
-         <div className='item__title'>Title</div>
-         <div className='item__price'>Amount</div>
+         <div className='item__date'>{ date.toISOString().split('T')[0] }</div>
+         <div className='item__title'>{ title }</div>
+         <div className='item__price'>{ amount }</div>
       </div>
    );
 }
