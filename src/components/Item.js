@@ -1,6 +1,14 @@
+import './Item.css';
+
 function Item()
 {
-   return <h3>Expense item.</h3>
+   return (
+      <div className='item'>
+         <div className='item__date'>Date</div>
+         <div className='item__title'>Title</div>
+         <div className='item__price'>Amount</div>
+      </div>
+   );
 }
 
 export default Item;

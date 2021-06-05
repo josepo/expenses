@@ -1,0 +1,24 @@
+.item
+{
+   background-color: lightgrey;
+   padding: 1em;
+   margin-bottom: 1em;
+   display: flex;
+}
+
+.item__date
+{
+   margin-right: 1em;
+}
+
+.item__title
+{
+   flex-grow: 1;
+   display: flex;
+}
+
+.item__price
+{
+   margin-left: 1em;
+   font-weight: bold;
+}
