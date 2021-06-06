@@ -4,10 +4,12 @@ import ExpenseDate from './ExpenseDate';
 function ExpenseItem({ date, title, amount })
 {
    return (
-      <div className='item'>
+      <div className='expense-item'>
          <ExpenseDate date={ date } />
-         <div className='item__title'>{ title }</div>
-         <div className='item__price'>{ amount }</div>
+         <div className='expense-item__description'>
+            <h2>{ title }</h2>
+            <div className='expense-item__price'>${ amount }</div>
+         </div>
       </div>
    );
 }
