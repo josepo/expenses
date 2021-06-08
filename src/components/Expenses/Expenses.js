@@ -3,7 +3,8 @@ import ExpenseItem from './ExpenseItem';
 
 import './Expenses.css';
 
-function Expenses({ items }) {
+const Expenses = ({ items }) =>
+{
    return (
       <Card className='expenses'>
       {
