@@ -8,7 +8,7 @@ import './Expenses.css';
 
 const Expenses = ({ items }) =>
 {
-   const [filteredYear, setFilteredYear] = useState('');
+   const [filteredYear, setFilteredYear] = useState('2020');
 
    const filter = year =>
    {
@@ -17,7 +17,7 @@ const Expenses = ({ items }) =>
 
    return (
       <div>
-         <ExpensesFilter onFilter={ filter } />
+         <ExpensesFilter value={ filteredYear } onFilter={ filter } />
          <Card className='expenses'>
          {
             items.map(i => 

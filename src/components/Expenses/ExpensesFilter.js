@@ -1,12 +1,12 @@
 import './ExpensesFilter.css';
 
-const ExpensesFilter = ({ onFilter }) =>
+const ExpensesFilter = ({ value, onFilter }) =>
 {
    return (
       <div className='expenses-filter'>
       <div className='expenses-filter__control'>
          <label>Filter by year</label>
-         <select onChange={ e => onFilter(e.target.value) }>
+         <select value={ value } onChange={ e => onFilter(e.target.value) }>
             <option value='2022'>2022</option>
             <option value='2021'>2021</option>
             <option value='2020'>2020</option>
