@@ -12,9 +12,15 @@ const App = () =>
       { id: 3, title: 'New Desk (Wooden)', amount: 450, date: new Date(2021, 5, 12) }
    ];
 
+   const add = expense =>
+   {
+      console.log('In App.js');
+      console.log(expense);
+   }
+
    return (
       <div className="App">
-         <NewExpense />
+         <NewExpense onNew={ add }/>
          <Expenses items={ expenses } />
       </div>
    );
