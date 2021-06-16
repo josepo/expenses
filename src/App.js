@@ -15,6 +15,7 @@ const DUMMY_EXPENSES = [
 const App = () =>
 {
    const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+   const [year, setYear] = useState(new Date().getFullYear());
 
    const add = expense =>
    {
@@ -24,7 +25,11 @@ const App = () =>
    return (
       <div className="App">
          <NewExpense onNew={ add }/>
-         <Expenses items={ expenses } />
+
+         <Expenses
+            items={ expenses.filter(e => e.date.getFullYear() === year) } 
+            year={ year }
+            onFilter={ year => setYear(year) } />
       </div>
    );
 }
