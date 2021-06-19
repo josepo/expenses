@@ -1,15 +1,13 @@
 import { useState } from 'react';
 import './ExpenseForm.css';
 
-const ExpenseForm = ({ onNew }) =>
+const ExpenseForm = ({ onNew, onCancel }) =>
 {
    const [expense, setExpense] = useState({
       title: '',
       date: '',
       amount: ''
    });
-
-   const [open, setOpen] = useState(false);
 
    const setTitle = e =>
    {
@@ -36,17 +34,8 @@ const ExpenseForm = ({ onNew }) =>
          id: Math.random().toString()
       });
 
-      close();
-   }
-
-   const close = () =>
-   {
       setExpense({ title: '', amount: '', date: '' });
-      setOpen(false);
    }
-
-   if (!open)
-      return <button onClick={ () => { setOpen(true); } }>Add New Expense</button>;
 
    return (
       <form onSubmit={ submit }>
@@ -66,7 +55,7 @@ const ExpenseForm = ({ onNew }) =>
             </div>
          </div>
          <div className='new-expense__actions'>
-            <button onClick={ close }>Cancel</button>
+            <button type='button' onClick={ onCancel }>Cancel</button>
             <button type='submit'>Add expense</button>
          </div>
       </form>
