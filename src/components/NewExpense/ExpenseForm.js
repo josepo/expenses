@@ -9,6 +9,8 @@ const ExpenseForm = ({ onNew }) =>
       amount: ''
    });
 
+   const [open, setOpen] = useState(false);
+
    const setTitle = e =>
    {
       setExpense(prevState => ({ ...prevState, title: e.target.value })); 
@@ -34,8 +36,17 @@ const ExpenseForm = ({ onNew }) =>
          id: Math.random().toString()
       });
 
-      setExpense({ title: '', amount: '', date: '' });
+      close();
    }
+
+   const close = () =>
+   {
+      setExpense({ title: '', amount: '', date: '' });
+      setOpen(false);
+   }
+
+   if (!open)
+      return <button onClick={ () => { setOpen(true); } }>Add New Expense</button>;
 
    return (
       <form onSubmit={ submit }>
@@ -55,6 +66,7 @@ const ExpenseForm = ({ onNew }) =>
             </div>
          </div>
          <div className='new-expense__actions'>
+            <button onClick={ close }>Cancel</button>
             <button type='submit'>Add expense</button>
          </div>
       </form>
